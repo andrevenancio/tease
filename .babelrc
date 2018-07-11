@@ -1,0 +1,15 @@
+{
+    "presets": [
+        "react",
+        ["env", {
+            "modules": false,
+            "targets": {
+                "node": "current"
+            }
+        }]
+    ],
+    "plugins": [
+        "transform-class-properties",
+        "transform-decorators-legacy"
+    ]
+}

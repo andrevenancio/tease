@@ -1,0 +1,15 @@
+@import './styles/reset.scss';
+@import './styles/variables.scss';
+@import './styles/theme.scss';
+
+#app {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .container {
+        border: 1px dashed red;
+    }
+}

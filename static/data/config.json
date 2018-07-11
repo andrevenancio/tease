@@ -1,0 +1,8 @@
+{
+    "character": {
+        "model": "fbx/cube.fbx"
+    },
+    "scenes": {
+        "default": "/data/scenes/default.json"
+    }
+}

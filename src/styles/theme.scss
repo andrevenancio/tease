@@ -1,0 +1,48 @@
+html,
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+body {
+    font-family: $font-main;
+    font-size: 11px;
+    color: $color-font-main;
+    background-color: $color-background-main;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+h1, h2, h3, h4, h5 {
+    color: $color-font-main;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 16px 0;
+}
+
+p {
+    color: $color-font-secondary;
+    font-weight: normal;
+    padding: 8px 0;
+}
+
+a,
+button {
+    background-color: transparent;
+    border: none;
+    color: $color-font-main;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s ease-out;
+
+    &:hover,
+    &.active {
+        color: $color-font-secondary;
+    }
+}
