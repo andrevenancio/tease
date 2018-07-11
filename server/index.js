@@ -1,3 +1,4 @@
+const compression = require('compression');
 const express = require('express');
 const cors = require('cors');
 const { PATH_DIST } = require('../webpack/webpack.config');
@@ -5,6 +6,8 @@ const { PATH_DIST } = require('../webpack/webpack.config');
 const PORT = process.env.PORT || 8080;
 
 const app = express();
+
+app.use(compression());
 app.use(cors());
 app.options('*', cors());
 

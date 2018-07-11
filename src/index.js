@@ -34,6 +34,4 @@ render(
 
 store.dispatch(actionAppInit());
 
-if (node !== 'production') {
-    global.window.printVersion();
-}
+global.window.printVersion();
