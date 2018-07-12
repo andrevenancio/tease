@@ -16,7 +16,7 @@ function* sagaAppInit() {
     // 2) load common assets here?
 
     // 3) everything is loaded
-    // yield put({ type: APP_READY, config: json });
+    yield put({ type: APP_READY, config: json });
 }
 
 export function* watchAppRequests() {

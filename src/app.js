@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
+
 import {
     BrowserRouter as Router,
     Redirect,
@@ -62,25 +64,39 @@ class Application extends PureComponent {
 
     renderApp() {
         return (
-            <div className="container">
-                <GameComponent />
-                <Switch>
-                    {
-                        ROUTES.map((route, index) => {
-                            const { component, path, exact, secure } = route;
-                            return (
-                                <Route
-                                    key={index}
-                                    path={path}
-                                    exact={exact}
-                                    render={props => render(component, props, { secure })}
-                                />
-                            );
-                        })
+            <Route render={({ location }) => (
+                <div className="container">
+                    { false &&
+                        <GameComponent />
                     }
-                    <Redirect path={PATHS.ALL} to={PATHS.HOME} />
-                </Switch>
-            </div>
+
+                    <TransitionGroup>
+                        <CSSTransition
+                            key={location.key}
+                            classNames="fade"
+                            timeout={500}
+                        >
+                            <Switch location={location}>
+                                {
+                                    ROUTES.map((route, index) => {
+                                        const { component, path, exact, secure } = route;
+                                        return (
+                                            <Route
+                                                key={index}
+                                                path={path}
+                                                exact={exact}
+                                                render={props => render(component, props, { secure })}
+                                            />
+                                        );
+                                    })
+                                }
+                                <Redirect path={PATHS.ALL} to={PATHS.HOME} />
+                            </Switch>
+                        </CSSTransition>
+                    </TransitionGroup>
+                </div>
+                )}
+            />
         );
     }
 

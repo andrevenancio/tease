@@ -1,3 +1,5 @@
+@import './theme/buttons.scss';
+
 html,
 body {
     margin: 0;
@@ -19,17 +21,19 @@ body {
 }
 
 
-h1, h2, h3, h4, h5 {
+h1, h2 {
     color: $color-font-main;
     font-weight: bold;
     font-size: 16px;
-    padding: 16px 0;
+    padding: 0;
+    padding-bottom: 1rem;
 }
 
 p {
     color: $color-font-secondary;
     font-weight: normal;
-    padding: 8px 0;
+    padding: 0;
+    padding-bottom: 1rem;
 }
 
 a,

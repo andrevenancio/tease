@@ -4,7 +4,7 @@ class AboutContainer extends PureComponent {
 
     render() {
         return (
-            <div>
+            <div className="page">
                 <h1>About</h1>
                 <p>some tech specs about this project</p>
             </div>
