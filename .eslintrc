@@ -7,13 +7,13 @@
         }
     },
     "globals": {
-        "__API__": true,
         "__NODE_ENV__": true,
         "__VERSION__": true,
+        "cancelAnimationFrame": true,
         "document": true,
         "fetch": true,
         "requestAnimationFrame": true,
-        "cancelAnimationFrame": true
+        "Worker": true
     },
     "rules": {
       "arrow-body-style": [0],

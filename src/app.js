@@ -54,9 +54,7 @@ class Application extends PureComponent {
             <Route render={({ location }) => (
                 <div className="container">
 
-                    { false &&
-                        <GameComponent />
-                    }
+                    <GameComponent />
 
                     <TransitionGroup>
                         <CSSTransition

@@ -8,6 +8,9 @@
         "npm": "6.1.0",
         "node": "8.11.2"
     },
+    "resolutions": {
+        "eslint-scope": "3.7.1"
+    },
     "scripts": {
         "heroku-postbuild": "npm run build",
         "website:dev": "export NODE_ENV=development&&webpack-dev-server --config webpack/development.js --watch --open",

@@ -1,7 +1,13 @@
 {
-    "character": {
-        "model": "fbx/cube.fbx"
-    },
+    "preload": [
+        { "key": "character", "file": "/models/cube-modified.obj" },
+        { "key": "house", "file": "/models/house-v3.obj" },
+        { "key": "spharemap-black", "file": "/spheremaps/black.jpg" },
+        { "key": "spharemap-blue", "file": "/spheremaps/blue.jpg" },
+        { "key": "spharemap-pink", "file": "/spheremaps/pink.jpg" },
+        { "key": "spharemap-skin", "file": "/spheremaps/skin.jpg" },
+        { "key": "spharemap-white", "file": "/spheremaps/white.jpg" }
+    ],
     "scenes": {
         "default": "/data/scenes/default.json"
     }

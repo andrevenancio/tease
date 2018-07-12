@@ -3,6 +3,7 @@ import {
     PCFSoftShadowMap,
     Scene,
     PerspectiveCamera,
+    Color,
 } from 'three';
 
 class Game {
@@ -28,10 +29,9 @@ class Game {
         this.renderer.gammaOutput = true;
 
         this.scene = new Scene();
+        this.scene.background = new Color(0.15, 0.15, 0.15);
 
         this.camera = new PerspectiveCamera(70, 1, 1, 1000);
-
-        // this.composer = new EffectComposer(this.renderer);
     }
 
     handleResize = () => {

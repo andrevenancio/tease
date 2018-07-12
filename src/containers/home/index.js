@@ -16,14 +16,16 @@ class HomeContainer extends PureComponent {
     render() {
         return (
             <div className="page">
-                <h1>Home</h1>
-                <p>introduction to the project</p>
-                <Link
-                    to={PATHS.CONFIG}
-                    className="button-default"
-                >
-                    Start
-                </Link>
+                <div className="holder">
+                    <h1>Home</h1>
+                    <p>introduction to the project</p>
+                    <Link
+                        to={PATHS.CONFIG}
+                        className="button-default"
+                    >
+                        Start
+                    </Link>
+                </div>
             </div>
         );
     }
