@@ -2,6 +2,14 @@ import React, { PureComponent } from 'react';
 
 class AboutContainer extends PureComponent {
 
+    componentDidMount() {
+        // console.log('about mount');
+    }
+
+    componentWillUnmount() {
+        // console.log('about unmount');
+    }
+
     render() {
         return (
             <div className="page">

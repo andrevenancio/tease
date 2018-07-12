@@ -1,6 +1,11 @@
 {
     "parser": "babel-eslint",
     "extends": "airbnb",
+    "settings": {
+        "import/resolver": {
+            "babel-module": {}
+        }
+    },
     "globals": {
         "__API__": true,
         "__NODE_ENV__": true,

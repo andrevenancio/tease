@@ -1,0 +1,13 @@
+.connection {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+
+    i {
+        display: block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: red;
+    }
+}

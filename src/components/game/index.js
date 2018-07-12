@@ -2,12 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import LoadingComponent from '../loading';
-import Game from '../../game';
-import {
-    selectScenesLoading,
-    // selectScenesCurrent,
-} from '../../store/scenes/selectors';
+import { LoadingComponent } from 'app/components';
+import Game from 'app/game';
+import { selectScenesLoading } from 'app/store/scenes/selectors';
 
 import './style.scss';
 

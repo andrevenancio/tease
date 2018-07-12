@@ -1,9 +1,17 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 
-import { PATHS } from '../../constants';
+import { PATHS } from 'app/constants';
 
 class ConfigContainer extends PureComponent {
+
+    componentDidMount() {
+        // console.log('config mount');
+    }
+
+    componentWillUnmount() {
+        // console.log('config unmount');
+    }
 
     render() {
         return (

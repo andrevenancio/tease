@@ -2,24 +2,14 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
-import {
-    BrowserRouter as Router,
-    Redirect,
-    Route,
-    Switch,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { selectAppReady } from './store/app/selectors';
-import {
-    HomeContainer,
-    ConfigContainer,
-    LevelContainer,
-    AboutContainer,
-} from './containers';
-import { PATHS } from './constants';
-import LoadingComponent from './components/loading';
-import GameComponent from './components/game';
+import { selectAppReady } from 'app/store/app/selectors';
+import { PATHS } from 'app/constants';
+import { HomeContainer, ConfigContainer, LevelContainer, AboutContainer } from 'app/containers';
+import { LoadingComponent, GameComponent, ConnectionComponent } from 'app/components';
+
 
 const ROUTES = [
     {
@@ -30,23 +20,20 @@ const ROUTES = [
     {
         path: PATHS.CONFIG,
         component: ConfigContainer,
-        exact: true,
     },
     {
         path: PATHS.LEVEL,
         component: LevelContainer,
-        exact: true,
     },
     {
         path: PATHS.ABOUT,
         component: AboutContainer,
-        exact: true,
     },
 ];
 
-const render = (Component, props) => {
+const render = (Component, props, options) => {
     return (
-        <Component {...props} />
+        <Component {...props} location={options.location} />
     );
 };
 
@@ -66,6 +53,7 @@ class Application extends PureComponent {
         return (
             <Route render={({ location }) => (
                 <div className="container">
+
                     { false &&
                         <GameComponent />
                     }
@@ -79,13 +67,13 @@ class Application extends PureComponent {
                             <Switch location={location}>
                                 {
                                     ROUTES.map((route, index) => {
-                                        const { component, path, exact, secure } = route;
+                                        const { component, path, exact } = route;
                                         return (
                                             <Route
                                                 key={index}
                                                 path={path}
                                                 exact={exact}
-                                                render={props => render(component, props, { secure })}
+                                                render={props => render(component, props, { location })}
                                             />
                                         );
                                     })
@@ -94,6 +82,8 @@ class Application extends PureComponent {
                             </Switch>
                         </CSSTransition>
                     </TransitionGroup>
+
+                    <ConnectionComponent />
                 </div>
                 )}
             />

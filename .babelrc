@@ -1,15 +1,19 @@
 {
-    "presets": [
-        "react",
-        ["env", {
-            "modules": false,
-            "targets": {
-                "node": "current"
-            }
-        }]
-    ],
-    "plugins": [
-        "transform-class-properties",
-        "transform-decorators-legacy"
-    ]
+	"presets": [
+		"react", ["env", {
+			"modules": false,
+			"targets": {
+				"node": "current"
+			}
+		}]
+	],
+	"plugins": [
+		"transform-class-properties",
+		"transform-decorators-legacy", ["module-resolver", {
+			"root": ["./"],
+			"alias": {
+				"app": "./src"
+			}
+		}]
+	]
 }
