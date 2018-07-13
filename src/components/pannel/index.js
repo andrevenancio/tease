@@ -7,13 +7,16 @@ import './style.scss';
 
 class PannelComponent extends Component {
 
-    // NEXT
-    // DONE
-    // PREVIOUS
+    static NEXT = 'Next';
+
+    static DONE = 'Done';
+
+    static SIZE = 250 - 32; // css width + padding
+
     static propTypes = {
         title: PropTypes.string,
         instructions: PropTypes.array,
-        // onComplete: PropTypes.func,
+        onComplete: PropTypes.func,
     }
 
     static defaultProps = {
@@ -22,7 +25,17 @@ class PannelComponent extends Component {
 
     state = {
         step: 0,
-        button: 'Next',
+    }
+
+    gotoNextStep = () => {
+        const step = this.state.step + 1;
+        if (step < this.props.instructions.length) {
+            this.setState({
+                step,
+            });
+        } else {
+            this.props.onComplete();
+        }
     }
 
     changeStep = (step) => {
@@ -33,14 +46,36 @@ class PannelComponent extends Component {
 
     render() {
         const { title, instructions } = this.props;
+        const { NEXT, DONE, SIZE } = PannelComponent;
 
         return (
             <div className="pannel">
                 <h2>{title}</h2>
                 <SpacerComponent />
-                <img src="https://colab.lynkco.com/auth-template/icons/facebook.svg" alt="" />
-                <SpacerComponent />
-                <p>Lorem ipsum dolor sit amet. blablab bla follow this instructions</p>
+                <div className="pannel__content">
+                    <div
+                        className="slide"
+                        style={{
+                            width: SIZE * (instructions.length + 1),
+                            transform: `translateX(-${this.state.step * SIZE}px)`,
+                        }}
+                    >
+                        {
+                            instructions.map((step, index) => (
+                                <div
+                                    key={`item-${index}`}
+                                    className="pannel__content__item"
+                                >
+                                    {step.icon &&
+                                        <img src={step.icon} alt="" />
+                                    }
+                                    <SpacerComponent />
+                                    <p>{step.copy}</p>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
                 <SpacerComponent />
                 <ul>
                     {
@@ -60,7 +95,10 @@ class PannelComponent extends Component {
                 </ul>
                 <SpacerComponent />
                 <div className="buttons">
-                    <ButtonComponent title={this.state.button} />
+                    <ButtonComponent
+                        title={this.state.step !== instructions.length - 1 ? NEXT : DONE}
+                        onClick={this.gotoNextStep}
+                    />
                 </div>
             </div>
         );

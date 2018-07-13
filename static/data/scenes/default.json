@@ -1,8 +1,8 @@
 {
     "title": "Title",
     "instructions": [
-        { "copy": "choose your character", "icon": null },
-        { "copy": "invite your friends", "icon": null },
+        { "copy": "choose your character", "icon": "https://colab.lynkco.com/auth-template/icons/facebook.svg" },
+        { "copy": "invite your friends" },
         { "copy": "talk to everyone", "icon": null }
     ],
     "models": [

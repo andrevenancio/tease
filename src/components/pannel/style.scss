@@ -1,12 +1,31 @@
 @import '../../styles/variables.scss';
 
+$size: 250px;
+
 .pannel {
     background-color: $color-background;
     border-radius: 4px;
-    width: 250px;
+    width: $size;
     padding: 16px;
     box-shadow: 0px 5px 50px 5px rgba(0, 0, 0, 0.4);
-    text-align: center;
+
+    &__content {
+        width: 100%;
+        overflow: hidden;
+
+        &__item {
+            display: inline-block;
+            width: calc(#{$size} - 32px);
+        }
+    }
+
+    .slide {
+        transition: transform 0.25s ease-out;
+    }
+
+    h2, ul, p {
+        text-align: center;
+    }
 
     img,
     svg {

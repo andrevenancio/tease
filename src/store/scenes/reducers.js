@@ -25,8 +25,6 @@ export const scenes = (state = initialState, action) => {
             }
             ctx.set('cur', action.scene);
 
-            console.log('SCENE_LOADED', ctx.get('old'), ctx.get('cur'));
-
             // triggers loading
             ctx.set('loading', false);
         });
