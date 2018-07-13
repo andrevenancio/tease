@@ -1,0 +1,15 @@
+.spacer {
+    background-color: transparent; // #0ff
+
+    &.small {
+        height: 8px;
+    }
+
+    &.medium {
+        height: 16px;
+    }
+
+    &.large {
+        height: 24px;
+    }
+}

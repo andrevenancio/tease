@@ -12,7 +12,7 @@ import {
 function* sagaScenesChange(action) {
     yield put({ type: SCENE_LOADING });
 
-    const response = yield fetch(action.scene);
+    const response = yield fetch(`/data/scenes/${action.scene}.json`);
     const json = yield response.json();
 
     yield put({ type: SCENE_LOADED, scene: json });

@@ -1,13 +1,13 @@
 {
-    "title": "Demo",
+    "title": "Title",
     "instructions": [
         { "copy": "choose your character", "icon": null },
         { "copy": "invite your friends", "icon": null },
         { "copy": "talk to everyone", "icon": null }
     ],
     "models": [
-        { "key": "tree", "model": "/obj/tree.obj" },
-        { "key": "rock", "model": "/obj/rock.obj" }
+        { "key": "tree", "file": "/obj/tree.obj" },
+        { "key": "rock", "file": "/obj/rock.obj" }
     ],
     "scene": [
         { "model": "tree", "position": [0, 0, 0], "scale": [1, 1, 1] },

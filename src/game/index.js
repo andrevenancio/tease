@@ -29,7 +29,7 @@ class Game {
         this.renderer.gammaOutput = true;
 
         this.scene = new Scene();
-        this.scene.background = new Color(0.15, 0.15, 0.15);
+        this.scene.background = new Color(0x242424);
 
         this.camera = new PerspectiveCamera(70, 1, 1, 1000);
     }

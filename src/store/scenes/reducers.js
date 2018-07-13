@@ -1,4 +1,4 @@
-import { fromJS, Map } from 'immutable';
+import { fromJS } from 'immutable';
 import {
     SCENE_LOADING,
     SCENE_LOADED,
@@ -7,7 +7,7 @@ import {
 const initialState = fromJS({
     loading: false,
     old: null,
-    cur: new Map({}),
+    cur: null,
 });
 
 export const scenes = (state = initialState, action) => {
@@ -24,6 +24,8 @@ export const scenes = (state = initialState, action) => {
                 ctx.set('old', cur);
             }
             ctx.set('cur', action.scene);
+
+            console.log('SCENE_LOADED', ctx.get('old'), ctx.get('cur'));
 
             // triggers loading
             ctx.set('loading', false);

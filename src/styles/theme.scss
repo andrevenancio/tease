@@ -1,4 +1,4 @@
-@import './theme/buttons.scss';
+@import './variables.scss';
 
 html,
 body {
@@ -8,9 +8,7 @@ body {
 
 body {
     font-family: $font-main;
-    font-size: 11px;
-    color: $color-font-main;
-    background-color: $color-background-main;
+    color: #0ff;
 }
 
 * {
@@ -21,32 +19,16 @@ body {
 }
 
 
-h1, h2 {
-    color: $color-font-main;
+h2 {
     font-weight: bold;
-    font-size: 16px;
-    padding: 0;
-    padding-bottom: 1rem;
+    color: $color-white;
+    font-size: 1rem;
+    // border: 1px dashed white;
 }
 
 p {
-    color: $color-font-secondary;
     font-weight: normal;
-    padding: 0;
-    padding-bottom: 1rem;
-}
-
-a,
-button {
-    background-color: transparent;
-    border: none;
-    color: $color-font-main;
-    cursor: pointer;
-    padding: 0;
-    transition: color 0.2s ease-out;
-
-    &:hover,
-    &.active {
-        color: $color-font-secondary;
-    }
+    color: $color-highlight;
+    font-size: 0.6875rem;
+    // border: 1px dashed white;
 }
